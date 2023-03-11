@@ -3,6 +3,10 @@
 ## Table of Contents
 * [Swap Memory](#Swap-Memory)  
 * [Swappiness](#Swappiness)
+* [Configuration file](#configuration-file)
+	* [.desktop-file](#.desktop-file)
+		* [desktop-file-example](#Postman-Example)
+
   
 ## Swap Memory
 In Linux, swap memory (also known as swap space or paging) is an area of the hard disk that is used to temporarily store data that cannot fit in the system's RAM (Random Access Memory). When a program or system process requires more memory than is available in RAM, the Linux kernel moves some of the data from RAM to the swap space, freeing up space in RAM for other processes.
@@ -46,3 +50,40 @@ vm.swappiness=40
 ```
 
 It is worth noting that changing the swappiness value can have a significant impact on system performance, and it should only be done after carefully considering the system's memory usage and requirements.
+
+## Configuration file
+
+In Linux, configuration files are files that contain settings and parameters used to configure the behavior of various system components, applications, and services. These files are typically plain text files that can be edited with a text editor and stored in specific directories or locations on the system.
+
+Configuration files are used by the system and applications to customize and fine-tune their behavior to suit the needs of the user. They can be used to set options like network settings, user preferences, system settings, and more.
+
+Some common places where configuration files are located in Linux include:
+
+* /etc: This directory contains system-wide configuration files that are used by the operating system and various system components.
+
+* /usr/share: This directory contains configuration files that are shared among different applications and packages installed on the system.
+
+* /home/username: This directory contains user-specific configuration files that are used to customize the behavior of applications and system settings for individual users.
+
+Configuration files can be edited using a text editor or via a command-line interface using utilities like sed or awk. It is important to be careful when editing configuration files, as errors can cause problems with the system or applications. It is recommended to make a backup of a configuration file before making any changes.
+
+### .desktop file
+A .desktop file in Linux is a configuration file that is used to create shortcuts to applications, files, or folders in a graphical user interface (GUI). It contains metadata such as the application name, icon, command to launch the application, and other properties that are used by the desktop environment or window manager to display and launch the associated application.
+
+When you click on an icon or menu entry in a desktop environment like GNOME or KDE, the desktop environment reads the .desktop file associated with that entry and uses the information in the file to launch the associated application.
+
+The .desktop file is typically stored in the /usr/share/applications or ~/.local/share/applications directory, and it uses the Desktop Entry Specification to define the properties of the desktop entry. This allows different desktop environments and window managers to display and launch applications consistently, regardless of the underlying technology used to create them.
+
+### Postman Example:
+
+```sh
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=/home/laxman/Apps/Postman/app/Postman #location to executable 
+Icon=/home/laxman/Apps/Postman/app/resources/app/assets/icon.png #location to icon
+Terminal=false
+Type=Application
+Categories=Development;
+
+```
